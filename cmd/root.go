@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Swing-Technologies/keplars-email-cli/internal/config"
+	"github.com/Swing-Technologies/keplars-cli/internal/config"
 	"github.com/spf13/cobra"
 )
 
@@ -15,9 +15,9 @@ var (
 
 var rootCmd = &cobra.Command{
 	Use:   "keplars",
-	Short: "Keplars Email CLI - Send transactional emails from the command line",
-	Long: `Keplars Email CLI is a command-line tool for sending transactional emails
-using the Keplars Email API.
+	Short: "Keplars CLI - Manage your Keplars account from the command line",
+	Long: `Keplars CLI is a command-line tool for sending emails and managing contacts,
+audiences, automations, and domains via the Keplars API.
 
 Set your API key using the KEPLARS_API_KEY environment variable, the --api-key flag,
 or run: keplars config set api-key <key>`,

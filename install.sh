@@ -224,7 +224,7 @@ install_cli() {
 main() {
     echo ""
     echo "╔═══════════════════════════════════════╗"
-    echo "║    Keplars Email CLI Installer       ║"
+    echo "║       Keplars CLI Installer          ║"
     echo "╚═══════════════════════════════════════╝"
     echo ""
 

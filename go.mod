@@ -1,4 +1,4 @@
-module github.com/Swing-Technologies/keplars-email-cli
+module github.com/Swing-Technologies/keplars-cli
 
 go 1.23
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Swing-Technologies/keplars-email-cli/internal/config"
+	"github.com/Swing-Technologies/keplars-cli/internal/config"
 	"github.com/spf13/cobra"
 )
 

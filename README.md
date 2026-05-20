@@ -1,4 +1,4 @@
-# Keplars Email CLI
+# Keplars CLI
 
 A command-line tool for sending transactional emails and managing your Keplars account.
 
@@ -13,15 +13,24 @@ Works on all major operating systems:
 
 ### Install Script (Recommended)
 
-**Linux, macOS, and Windows (Git Bash/WSL):**
+**Linux / macOS / Windows (Git Bash or WSL):**
 
 ```bash
 curl -fsSL https://keplars.com/install.sh | bash
 ```
 
+**Windows (PowerShell — native, no Git Bash needed):**
+
+```powershell
+irm https://keplars.com/install.ps1 | iex
+```
+
 Install a specific version:
 ```bash
-curl -fsSL https://keplars.com/install.sh | bash -s -- 0.1.0
+curl -fsSL https://keplars.com/install.sh | bash -s -- 1.11.2
+```
+```powershell
+& ([scriptblock]::Create((irm https://keplars.com/install.ps1))) -Version 1.11.2
 ```
 
 ### Download Binaries
