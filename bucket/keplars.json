@@ -1,16 +1,16 @@
 {
-  "version": "1.11.5",
+  "version": "2.1.0",
   "description": "Official CLI for the Keplars transactional email API",
   "homepage": "https://github.com/KeplarsHQ/cli",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/KeplarsHQ/cli/releases/download/v1.11.5/keplars-windows-amd64.exe#/keplars.exe",
-      "hash": "e89202c9baadf0b3291714e7512102174bf917c57354e6aba19777243eda6f26"
+      "url": "https://github.com/KeplarsHQ/cli/releases/download/v2.1.0/keplars-windows-amd64.exe#/keplars.exe",
+      "hash": "88b75f773ac8f354ebda6ab21c7b4a815bc9a89e50c34acf59579bd3a285060b"
     },
     "arm64": {
-      "url": "https://github.com/KeplarsHQ/cli/releases/download/v1.11.5/keplars-windows-arm64.exe#/keplars.exe",
-      "hash": "b67fa274ffc350862aee77ecb58d0a6dee6a1ca78fb7088a6184354d9549b48d"
+      "url": "https://github.com/KeplarsHQ/cli/releases/download/v2.1.0/keplars-windows-arm64.exe#/keplars.exe",
+      "hash": "55c63ab5b1da23f3541f833c2c2b7e9ed9723708ef1bbd332396f4b305296d90"
     }
   },
   "bin": "keplars.exe",
