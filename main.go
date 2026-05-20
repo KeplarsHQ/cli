@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/Swing-Technologies/keplars-cli/cmd"
+	"github.com/KeplarsHQ/cli/cmd"
 )
 
 func main() {

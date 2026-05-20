@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Swing-Technologies/keplars-sdk/go/keplars"
+	"github.com/KeplarsHQ/go-sdk/keplars"
 	"github.com/spf13/cobra"
 )
 
