@@ -1,11 +1,36 @@
-# Keplars Cli
+# Keplars CLI
 
-## How do I install these formulae?
+Homebrew tap for the official Keplars CLI — send emails, manage contacts, audiences, automations, and domains from your terminal.
 
-`brew install KeplarsHQ/cli/keplars`
+## Install
 
-Or `brew tap KeplarsHQ/cli` and then `brew install keplars`.
+```bash
+brew tap KeplarsHQ/cli
+brew install keplars
+```
 
-## Documentation
+Or in one line:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+brew install KeplarsHQ/cli/keplars
+```
+
+## Upgrade
+
+```bash
+brew upgrade keplars
+```
+
+## Quick start
+
+```bash
+keplars config set api-key kms_xxx.live_yyy
+
+keplars send \
+  --to user@example.com \
+  --from hello@yourdomain.com \
+  --subject "Hello" \
+  --text "Hello from Keplars"
+```
+
+Full docs at [keplars.com](https://keplars.com) · [CLI reference](https://github.com/KeplarsHQ/cli)
