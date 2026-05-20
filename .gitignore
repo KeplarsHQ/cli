@@ -1,0 +1,23 @@
+# Binaries
+keplars
+keplars.exe
+keplars_unix
+keplars_darwin
+keplars_windows
+keplars_linux
+keplars-*
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.sum
+
+# Directories
+vendor/
+dist/
+build/
