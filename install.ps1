@@ -9,9 +9,9 @@
 .PARAMETER InstallDir
     Directory to install the binary. Defaults to $env:USERPROFILE\.keplars\bin
 .EXAMPLE
-    irm https://keplars.com/install.ps1 | iex
+    irm https://cli.keplars.com/install.ps1 | iex
 .EXAMPLE
-    & ([scriptblock]::Create((irm https://keplars.com/install.ps1))) -Version 1.11.2
+    & ([scriptblock]::Create((irm https://cli.keplars.com/install.ps1))) -Version 1.11.2
 #>
 param(
     [string]$Version = "",

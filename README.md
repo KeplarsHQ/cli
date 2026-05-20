@@ -16,21 +16,21 @@ Works on all major operating systems:
 **Linux / macOS / Windows (Git Bash or WSL):**
 
 ```bash
-curl -fsSL https://keplars.com/install.sh | bash
+curl -fsSL https://cli.keplars.com/install.sh | bash
 ```
 
 **Windows (PowerShell — native, no Git Bash needed):**
 
 ```powershell
-irm https://keplars.com/install.ps1 | iex
+irm https://cli.keplars.com/install.ps1 | iex
 ```
 
 Install a specific version:
 ```bash
-curl -fsSL https://keplars.com/install.sh | bash -s -- 1.11.2
+curl -fsSL https://cli.keplars.com/install.sh | bash -s -- 1.11.2
 ```
 ```powershell
-& ([scriptblock]::Create((irm https://keplars.com/install.ps1))) -Version 1.11.2
+& ([scriptblock]::Create((irm https://cli.keplars.com/install.ps1))) -Version 1.11.2
 ```
 
 ### Download Binaries

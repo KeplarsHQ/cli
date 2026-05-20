@@ -5,11 +5,8 @@ set -e
 # Works on Linux, macOS, and Windows (via Git Bash/WSL)
 #
 # Usage:
-#   curl -fsSL https://keplars.com/install.sh | bash
-#   curl -fsSL https://keplars.com/install.sh | bash -s -- 0.1.0
-#
-# Alternative (direct GitHub):
-#   curl -fsSL https://raw.githubusercontent.com/KeplarsHQ/cli/main/install.sh | bash
+#   curl -fsSL https://cli.keplars.com/install.sh | bash
+#   curl -fsSL https://cli.keplars.com/install.sh | bash -s -- 1.11.2
 
 REPO="KeplarsHQ/cli"
 BINARY_NAME="keplars"
