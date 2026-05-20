@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Build Keplars CLI for all platforms
 
