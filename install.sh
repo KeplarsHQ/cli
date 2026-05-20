@@ -16,14 +16,17 @@ if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; t
     # Windows (Git Bash)
     INSTALL_DIR="${INSTALL_DIR:-$HOME/bin}"
     IS_WINDOWS=true
+    CURL_OPTS="--ssl-no-revoke"
 elif [[ -n "$WSL_DISTRO_NAME" ]] || grep -qi microsoft /proc/version 2>/dev/null; then
     # WSL
     INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
     IS_WINDOWS=false
+    CURL_OPTS=""
 else
     # Linux/macOS
     INSTALL_DIR="${INSTALL_DIR:-/usr/local/bin}"
     IS_WINDOWS=false
+    CURL_OPTS=""
 fi
 
 # Colors
@@ -94,14 +97,14 @@ detect_platform() {
 
 # Get latest version from GitHub
 get_latest_version() {
-    print_info "Fetching latest version..."
+    print_info "Fetching latest version..." >&2
 
-    LATEST_VERSION=$(curl -fsSL "https://api.github.com/repos/${REPO}/releases/latest" | \
+    LATEST_VERSION=$(curl -fsSL $CURL_OPTS -H "User-Agent: keplars-cli-installer" -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${REPO}/releases/latest" | \
         grep '"tag_name":' | \
         sed -E 's/.*"v([^"]+)".*/\1/')
 
     if [ -z "$LATEST_VERSION" ]; then
-        print_error "Could not determine latest version"
+        print_error "Could not determine latest version" >&2
         exit 1
     fi
 
@@ -157,7 +160,7 @@ install_cli() {
 
     # Download binary
     print_info "Downloading from ${DOWNLOAD_URL}..."
-    if ! curl -fsSL "$DOWNLOAD_URL" -o "$TMP_FILE"; then
+    if ! curl -fsSL $CURL_OPTS "$DOWNLOAD_URL" -o "$TMP_FILE"; then
         print_error "Failed to download binary"
         print_error "Version v${VERSION} may not exist or binary not available for ${PLATFORM}-${ARCH}"
         rm -rf "$TMP_DIR"
@@ -167,8 +170,11 @@ install_cli() {
     # Make executable
     chmod +x "$TMP_FILE"
 
-    # Check if we need sudo
-    if [ -w "$INSTALL_DIR" ]; then
+    # Ensure install directory exists
+    mkdir -p "$INSTALL_DIR"
+
+    # Check if we need sudo (never on Windows)
+    if [ "$IS_WINDOWS" = true ] || [ -w "$INSTALL_DIR" ]; then
         SUDO=""
     else
         SUDO="sudo"
@@ -209,7 +215,7 @@ install_cli() {
         fi
 
         echo ""
-        print_info "Documentation: https://github.com/${REPO}/blob/main/cli/README.md"
+        print_info "Documentation: https://github.com/${REPO}#readme"
     else
         print_error "Installation completed but ${BINARY_NAME} not found in PATH"
         print_warning "You may need to add ${INSTALL_DIR} to your PATH"

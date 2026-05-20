@@ -46,7 +46,8 @@ function Get-Arch {
 function Get-LatestVersion {
     Write-Info "Fetching latest version..."
     try {
-        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repo/releases/latest" -UseBasicParsing
+        $headers = @{ "User-Agent" = "keplars-cli-installer"; "Accept" = "application/vnd.github.v3+json" }
+        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$Repo/releases/latest" -Headers $headers
         return $release.tag_name -replace '^v', ''
     } catch {
         Write-Fail "Could not fetch latest version: $_"
